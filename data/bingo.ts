@@ -12,7 +12,9 @@ export interface BingoCardData {
 
 export interface BingoGameData {
     id: string;
+    name: string;
     card: BingoCardData;
     highlightedSpaces: number;
     seed: number;
+    lastPlayed: number;
 }
