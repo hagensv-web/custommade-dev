@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -8,8 +8,8 @@ export default function Header() {
 
   const navItems = [
     { label: "Games", href: "/" },
-    { label: "Blog", href: "/blog" },
     { label: "About", href: "/about" },
+    { label: "Blog", href: "/blog" },
   ];
 
   return (
