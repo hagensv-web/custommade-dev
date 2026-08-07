@@ -1,3 +1,4 @@
+import { games } from "@/data/games";
 import StyledLink from "../StyledLink";
 import FooterSection from "./FooterSection";
 
@@ -8,9 +9,9 @@ export default function Footer(){
                 <div className="col-span-4 md:col-span-7"></div>
                 <div className="col-span-4 md:col-span-2">
                     <FooterSection title="Generators">
-                        <p><StyledLink href="/bingo">Bingo</StyledLink></p>
-                        <p><StyledLink href="/word-guess">Word Guess</StyledLink></p>
-                        <p><StyledLink href="/slide-puzzle">Sliding Puzzle</StyledLink></p>
+                        { games.map( game => (
+                            <p><StyledLink href={game.baseUrl}>{game.name}</StyledLink></p>
+                        )) }
                     </FooterSection>
                 </div>
                 <div className="col-span-4 md:col-span-3">
