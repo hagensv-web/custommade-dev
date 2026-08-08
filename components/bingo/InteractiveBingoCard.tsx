@@ -79,17 +79,17 @@ export default function InteractiveBingoCard({ game }: Props){
 
     return (
         <div>
-        <table className="border-collapse border-3 border-color-black">
+        <table className="hyphens-auto break-all text-xs lg:break-normal lg:text-sm border-collapse border-3 border-color-black w-full table-fixed max-w-150 m-auto">
             <tbody>
             { rows.map( r => (
                 <tr key={r}>
                     { cols.map( c => (
                         <td key={c} className="border-1">
                             <div 
-                                className={`flex justify-center items-center w-25 h-25${ isHighlighted(r,c) ? ' bg-yellow-800/30' : '' }`}
+                                className={`p-1 flex justify-center items-center w-full aspect-square${ isHighlighted(r,c) ? ' bg-yellow-800/30' : '' }`}
                                 onClick={() => toggleCell(r,c)}
                             >
-                            <p className="text-center text-sm">{getValue(r,c)}</p>
+                            <p className="text-center">{getValue(r,c)}</p>
                             </div>
                         </td>
                     ))}
@@ -97,10 +97,11 @@ export default function InteractiveBingoCard({ game }: Props){
             )) }
             </tbody>
         </table>
-
+        <div className="flex flex-row justify-center items-center mt-5">
         <button 
-            className="px-4 py-2 rounded-xl bg-violet-700 text-white m-auto mt-5"
+            className="px-4 py-2 rounded-xl bg-violet-700 text-white"
             onClick={() => clearHighlighted()}>Clear</button>
+        </div>
         </div>
     ) 
 }

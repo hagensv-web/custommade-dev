@@ -77,13 +77,13 @@ export default function BingoCardPreview({ card, initialSeed, actions }: Props) 
                 </button>
             </div>
 
-        <table className="text-xs lg:text-sm border-collapse border-3 border-color-black m-auto">
+        <table className="hyphens-auto break-all text-xs lg:break-normal lg:text-sm border-collapse border-3 border-color-black w-full table-fixed max-w-150 m-auto">
             <tbody>
             { rows.map( r => (
                 <tr key={r}>
                     { cols.map( c => (
                         <td key={c} className="border-1">
-                            <div className="flex justify-center items-center w-16 h-16 lg:w-25 lg:h-25">
+                            <div className="p-1 flex justify-center items-center w-full aspect-square">
                             <p className="text-center">{getValue(r,c)}</p>
                             </div>
                         </td>
