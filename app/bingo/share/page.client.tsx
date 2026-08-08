@@ -42,7 +42,7 @@ export default function ShareBingoCardClientPage(){
 
     return (
         <div className="flex flex-col justify-center m-auto">
-            <h1 className="text-center">Bingo Card Editor</h1>
+            <h1 className="text-center">{ card?.getData().name ?? "Custom Bingo Card" }</h1>
             { !loading && 
                 <BingoCardPreview 
                     card={card!} 
