@@ -1,9 +1,17 @@
-import { getPostById } from "@/logic/shared/blog-api";
+import { getAllPosts, getAllPostsByCategory, getPostById } from "@/logic/shared/blog-api";
 import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 
 type Props = {
     params: Promise<{category: string, id: string}>
+}
+
+export async function generateStaticParams(){
+  const posts = await getAllPosts();
+  return posts.map(post => ({
+    category: post.category,
+    id: post.id
+  }))
 }
 
 export async function generateMetaData(

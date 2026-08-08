@@ -1,12 +1,17 @@
 import PostListing from "@/components/blogs/PostListing";
 import StyledLink from "@/components/core/StyledLink";
-import { getAllPostsByCategory, getPostById } from "@/logic/shared/blog-api";
+import { getAllPosts, getAllPostsByCategory, getPostById, getPostCategories } from "@/logic/shared/blog-api";
 import { Metadata, ResolvingMetadata } from "next";
-import Link from "next/link";
-import { notFound } from "next/navigation";
 
 type Props = {
     params: Promise<{category: string}>
+}
+
+export async function generateStaticParams(){
+  const posts = await getPostCategories();
+  return posts.map((category) => ({
+    category
+  }))
 }
 
 export async function generateMetaData(
