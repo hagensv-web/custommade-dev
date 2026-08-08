@@ -1,0 +1,21 @@
+1:"$Sreact.fragment"
+3:I[97367,["/_next/static/chunks/404lxeq3qu2pl.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+2:Tbc4,<p>Bingo is one of the world's most popular party and social games. Whether you're playing traditional 75-ball bingo or creating a custom game, the objective is simple: mark spaces on your card as items are called and be the first to complete the required pattern.</p>
+<h2 id="how-to-play-traditional-75-ball-bingo"><a aria-hidden="true" tabindex="-1" href="#how-to-play-traditional-75-ball-bingo"><span class="icon icon-link"></span></a>How to Play Traditional 75-Ball Bingo</h2>
+<p>Traditional bingo is played on a 5×5 card. Each column is labeled with one of the letters in <strong>BINGO</strong>, and each column contains randomly selected numbers from a specific range: <strong>B:</strong> 1 to 15, <strong>I:</strong> 16 to 30, <strong>N:</strong> 31 to 45, <strong>G:</strong> 46 to 60, <strong>O:</strong> 61 to 75</p>
+<p>The center square is a <strong>free space</strong>, meaning it is already marked before the game begins.</p>
+<p>To start the game, a caller randomly selects balls numbered 1 through 75. Each ball is announced using its letter and number (for example, <strong>B-12</strong> or <strong>G-53</strong>). If the called number appears on your card, mark that space.</p>
+<p>The first player to complete the required winning pattern and call out <strong>"BINGO!"</strong> wins the game. The most common winning pattern is five marked spaces in a row, either horizontally, vertically, or diagonally. However, some games use different patterns, such as four corners, a full card (also called a blackout or coverall), or special shapes announced before the game begins.</p>
+<h2 id="how-to-play-custom-bingo"><a aria-hidden="true" tabindex="-1" href="#how-to-play-custom-bingo"><span class="icon icon-link"></span></a>How to Play Custom Bingo</h2>
+<p>Bingo isn't limited to numbered cards. Custom bingo replaces the numbers with words, pictures, or phrases related to a specific topic. Instead of calling numbered balls, the caller announces the matching words or shows the corresponding images. In more casual games, there may be no formal caller at all. Players simply mark their cards whenever an event occurs or they observe one of the listed items. For example, in a road trip bingo game, players mark spaces as they spot landmarks or vehicles, while in a movie bingo game, players mark spaces when certain scenes or phrases appear.</p>
+<p>Custom bingo is popular in classrooms, team-building activities, baby showers, holiday parties, and other events because it can be tailored to nearly any audience or theme.</p>
+<p>The objective remains the same:</p>
+<ol>
+<li>Give each player a unique bingo card.</li>
+<li>Randomly call or display the items.</li>
+<li>Players mark matching spaces on their cards.</li>
+<li>The first player to complete the required pattern and call <strong>"BINGO!"</strong> wins.</li>
+</ol>
+<p>Because custom bingo can use virtually any set of items, it is an engaging way to reinforce learning, encourage participation, or simply add a fun activity to an event.</p>0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","h1",null,{"children":"How to Play Bingo"}],["$","p",null,{"children":["Published: ","8-1-2026"]}],"$undefined",["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"JZhBtX65_0VYes8WVVPya"}
+5:null
