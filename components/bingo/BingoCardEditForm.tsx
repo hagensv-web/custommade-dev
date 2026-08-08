@@ -53,7 +53,6 @@ export default function BingoCardEditForm({
                     Card Name
                 </label>
                 <StyledInput
-                    className="w-full rounded border px-3 py-2"
                     value={data.name}
                     onChange={(e) => update("name", e.target.value)}
                 />
@@ -67,7 +66,6 @@ export default function BingoCardEditForm({
                     <StyledInput
                         type="number"
                         min={1}
-                        className="w-full rounded border px-3 py-2"
                         value={data.rows}
                         onChange={(e) =>
                             update("rows", Number(e.target.value))
@@ -82,7 +80,6 @@ export default function BingoCardEditForm({
                     <StyledInput
                         type="number"
                         min={1}
-                        className="w-full rounded border px-3 py-2"
                         value={data.cols}
                         onChange={(e) =>
                             update("cols", Number(e.target.value))

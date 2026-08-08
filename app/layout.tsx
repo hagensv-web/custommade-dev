@@ -42,7 +42,7 @@ export default function RootLayout({
           <SidebarAd />
         </div>
           
-        <main className="flex col-span-8 lg:col-span-6 pt-6 px-10 lg:px-2">
+        <main className="lg:flex col-span-8 lg:col-span-6 pt-6 px-10 lg:px-2 w-full">
           {children}
         </main>
 
