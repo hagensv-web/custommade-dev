@@ -81,7 +81,9 @@ export class BingoCardManage {
             cardData.lastEdited = Date.now();
         }
 
-        this.save();
+        if (!this.temporary){
+            this.save();
+        }
     }
 
     static listBingoCardIds(): string[] {
@@ -109,7 +111,6 @@ export class BingoCardManage {
             theme: DEFAULT_THEME,
             values: [],
             lastEdited: Date.now()
-            
         })
     }
 
@@ -146,8 +147,6 @@ export class BingoCardManage {
     }
 
     export(): string {
-        //const searchParams = new URLSearchParams(this.cardData)
-
         const json = JSON.stringify(this.cardData);
         const compressed = zlibCompress(json);
         return compressed;

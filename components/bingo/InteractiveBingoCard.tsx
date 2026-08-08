@@ -86,7 +86,7 @@ export default function InteractiveBingoCard({ game }: Props){
                     { cols.map( c => (
                         <td key={c} className="border-1">
                             <div 
-                                className={`p-1 flex justify-center items-center w-full aspect-square${ isHighlighted(r,c) ? ' bg-yellow-800/30' : '' }`}
+                                className={`p-1 flex justify-center items-center w-full aspect-square${ isHighlighted(r,c) ? ' bg-yellow-300/30' : '' }`}
                                 onClick={() => toggleCell(r,c)}
                             >
                             <p className="text-center">{getValue(r,c)}</p>

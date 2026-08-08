@@ -98,6 +98,8 @@ export class BingoGameManage {
 
     clearHighlights(){
         this.gameData.highlightedSpaces = 0
+
+        this.save();
     }
 
     toggleCell(row: number, col: number){
@@ -105,6 +107,8 @@ export class BingoGameManage {
 
         const cell = (2**cellId) * (this.isHighlighed(row, col) ? -1 : 1)
         this.gameData.highlightedSpaces += cell
+
+        this.save();
     }
 
     export(): string {
