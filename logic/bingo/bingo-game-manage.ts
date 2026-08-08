@@ -104,9 +104,7 @@ export class BingoGameManage {
         const cellId = row*this.gameData.card.cols + col;
 
         const cell = (2**cellId) * (this.isHighlighed(row, col) ? -1 : 1)
-        console.log(cell);
         this.gameData.highlightedSpaces += cell
-        console.log(this.gameData.highlightedSpaces)
     }
 
     export(): string {

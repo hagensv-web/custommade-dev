@@ -23,8 +23,6 @@ export default function ShareBingoCardClientPage(){
                 return;
             }
 
-            console.log(shareData)
-
             const card = BingoCardManage.importBingoCard(shareData);
 
             if (!card){
