@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "cp CNAME out/CNAME",
     "start": "next start",
     "lint": "eslint"
   },
