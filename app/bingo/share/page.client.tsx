@@ -1,6 +1,5 @@
 'use client';
 
-import BingoCardEditForm from "@/components/bingo/BingoCardEditForm";
 import BingoCardPreview from "@/components/bingo/BingoCardPreview";
 import { BingoCardActions } from "@/logic/bingo/bingo-actions";
 import type { BingoCardManage } from "@/logic/bingo/bingo-card-manage";

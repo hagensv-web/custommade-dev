@@ -1,8 +1,6 @@
 'use client';
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { BingoRoutes } from "@/logic/bingo/bingo-routes";
 import type { BingoGameManage } from "@/logic/bingo/bingo-game-manage";
 import BingoGameDetails from "./BingoGameDetails";
 

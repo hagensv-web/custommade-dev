@@ -1,4 +1,3 @@
-// components/StyledLink.tsx
 import Link, { LinkProps } from "next/link";
 import { AnchorHTMLAttributes, forwardRef } from "react";
 

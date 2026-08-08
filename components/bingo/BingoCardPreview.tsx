@@ -1,4 +1,3 @@
-import { BingoCardData } from "@/data/bingo";
 import SeededRng from "@/logic/shared/seeded-rng";
 import { useMemo, useState } from "react";
 import StyledInput from "../core/StyledInput";
