@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
 import { zlibCompress, zlibDecompress } from "../shared/compress";
 import { BingoCardData } from "@/data/bingo";
 
 const BINGO_CARD_STORAGE = "/bingo/cards/";
-const BINGO_CARD_FORMAT = "/bingo/data-format";
+const BINGO_CARD_FORMAT = "/bingo/card-data-format";
 const CURRENT_FORMAT = "0";
 
 const getCardStoragePath = (id: string) => BINGO_CARD_STORAGE+id;
@@ -21,7 +21,7 @@ const updateCardsList = (ids: string[]) => {
 }
 
 const migrateFormat = () => {
-    const clientFormat = localStorage.getItem("/bingo/data-format")
+    const clientFormat = localStorage.getItem(BINGO_CARD_FORMAT)
     if (clientFormat === null){
         localStorage.setItem(BINGO_CARD_FORMAT,CURRENT_FORMAT);
         return;
@@ -32,9 +32,6 @@ const migrateFormat = () => {
 }
 
 export class BingoCardManage {
-    static {
-        migrateFormat();
-    }
 
     private constructor(
         private cardData: BingoCardData, 
@@ -149,6 +146,8 @@ export class BingoCardManage {
     }
 
     export(): string {
+        //const searchParams = new URLSearchParams(this.cardData)
+
         const json = JSON.stringify(this.cardData);
         const compressed = zlibCompress(json);
         return compressed;

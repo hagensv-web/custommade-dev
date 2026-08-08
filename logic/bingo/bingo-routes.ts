@@ -1,4 +1,6 @@
+import { BingoGameData } from "@/data/bingo";
 import { BingoCardManage } from "./bingo-card-manage"
+import { BingoGameManage } from "./bingo-game-manage";
 
 const BINGO_BASE = "/bingo";
 
@@ -17,6 +19,10 @@ export class BingoRoutes {
 
     static share(card: BingoCardManage){
         return `${BINGO_BASE}/share/?data=${card.export()}`
+    }
+
+    static play(game: BingoGameManage){
+        return `${BINGO_BASE}/play/?game=${game.getData().id}`
     }
 
     static create(){
