@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Link, Menu, X } from "lucide-react";
+import StyledLink from "./StyledLink";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -12,8 +13,20 @@ export default function Header() {
     { label: "Blog", href: "/blog" },
   ];
 
+  const [ developmentMode, setDevelopmentMode ] = useState(false);
+  
+  useEffect( () => {
+    const host = window.location.hostname;
+    setDevelopmentMode(host !== 'custommade.games')
+  })  
+
   return (
     <header className="sticky top-0 z-50 bg-blue-700/80 backdrop-blur text-white">
+      { developmentMode && 
+        <div className="bg-yellow-200 flex justify-center">
+          <span className="text-center text-black">You are on the DEVELOPMENT version of custommade.games. This version is highly unstable, your data may be lost! <StyledLink href={"https://custommade.games"}>Return to safety</StyledLink></span>
+        </div>
+      }
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-16 px-4 sm:px-6 lg:px-8 justify-between md:justify-normal">
         {/* Logo */}
         <a
