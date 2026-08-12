@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-3:I[97367,["/_next/static/chunks/3s_g67gb-x1n6.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+3:I[97367,["/_next/static/chunks/3-fq5way3tp-d.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
 2:Tbc4,<p>Bingo is one of the world's most popular party and social games. Whether you're playing traditional 75-ball bingo or creating a custom game, the objective is simple: mark spaces on your card as items are called and be the first to complete the required pattern.</p>
 <h2 id="how-to-play-traditional-75-ball-bingo"><a aria-hidden="true" tabindex="-1" href="#how-to-play-traditional-75-ball-bingo"><span class="icon icon-link"></span></a>How to Play Traditional 75-Ball Bingo</h2>
@@ -17,5 +17,5 @@
 <li>Players mark matching spaces on their cards.</li>
 <li>The first player to complete the required pattern and call <strong>"BINGO!"</strong> wins.</li>
 </ol>
-<p>Because custom bingo can use virtually any set of items, it is an engaging way to reinforce learning, encourage participation, or simply add a fun activity to an event.</p>0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","h1",null,{"children":"How to Play Bingo"}],["$","p",null,{"children":["Published: ","8-1-2026"]}],"$undefined",["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"SE3QxCFr9iYnAy-i6x-bi"}
+<p>Because custom bingo can use virtually any set of items, it is an engaging way to reinforce learning, encourage participation, or simply add a fun activity to an event.</p>0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","h1",null,{"children":"How to Play Bingo"}],["$","p",null,{"children":["Published: ","8-1-2026"]}],"$undefined",["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"8QMhyyKOnpSnR3uR1MH3s"}
 5:null
