@@ -12,10 +12,8 @@ export default function FooterSection({
             </p>
 
             <nav aria-label={title}>
-                <ul className="list-style-none">
                     {children}
-                </ul>
-            </nav>
+           </nav>
         </div>
     );
 }

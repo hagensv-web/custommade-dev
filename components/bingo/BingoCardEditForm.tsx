@@ -49,10 +49,11 @@ export default function BingoCardEditForm({
     return (
         <div className="space-y-6">
             <div>
-                <label className="mb-1 block font-medium">
+                <label className="mb-1 block font-medium" htmlFor="cardname">
                     Card Name
                 </label>
                 <StyledInput
+                    id="cardname"
                     value={data.name}
                     onChange={(e) => update("name", e.target.value)}
                 />
@@ -60,10 +61,11 @@ export default function BingoCardEditForm({
 
             <div className="grid grid-cols-2 gap-4">
                 <div>
-                    <label className="mb-1 block font-medium">
+                    <label className="mb-1 block font-medium" htmlFor="rows">
                         Rows
                     </label>
                     <StyledInput
+                        id="rows"
                         type="number"
                         min={1}
                         value={data.rows}
@@ -74,10 +76,11 @@ export default function BingoCardEditForm({
                 </div>
 
                 <div>
-                    <label className="mb-1 block font-medium">
+                    <label className="mb-1 block font-medium" htmlFor="cols">
                         Columns
                     </label>
                     <StyledInput
+                        id="cols"
                         type="number"
                         min={1}
                         value={data.cols}
@@ -89,18 +92,20 @@ export default function BingoCardEditForm({
             </div>
 
             {/* <div>
-                <label className="mb-1 block font-medium">
+                <label className="mb-1 block font-medium" htmlFor="theme">
                     Theme
                 </label>
                 <input
+                    id="theme"
                     className="w-full rounded border px-3 py-2"
                     value={data.theme}
                     onChange={(e) => update("theme", e.target.value)}
                 />
             </div> */}
 
-            <label className="flex items-center gap-2">
+            <label className="flex items-center gap-2" htmlFor="hasFreeSpace">
                 <input
+                    id="hasFreeSpace"
                     type="checkbox"
                     checked={data.hasFreeSpace}
                     onChange={(e) =>
@@ -111,10 +116,11 @@ export default function BingoCardEditForm({
             </label>
 
             <div>
-                <label className="mb-1 block font-medium">
+                <label className="mb-1 block font-medium" htmlFor="freeSpaceText">
                     Free Space Text
                 </label>
                 <StyledInput
+                    id="freeSpaceText"
                     disabled={!data.hasFreeSpace}
                     value={data.freeSpaceText}
                     onChange={(e) =>
@@ -143,6 +149,7 @@ export default function BingoCardEditForm({
                             className="flex gap-2"
                         >
                             <StyledInput
+                                name={`value${index+1}`}
                                 className="flex-1 rounded border px-3 py-2"
                                 value={entry}
                                 onChange={(e) =>
