@@ -26,6 +26,10 @@ export default function BingoHome(){
             <h2>How to Create a Bingo Card</h2>
             <ol>
                 <li>Click "Create New Card"</li>
+                <li>Set the name</li>
+                <li>Set the size</li>
+                <li>Customize the free space</li>
+                <li>Enter values for your bingo card</li>
             </ol>
 
             <h2>Sample Use Cases:</h2>
