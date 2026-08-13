@@ -18,6 +18,9 @@ export const comingSoon: Game[] = [
     baseUrl: "/word-guess",
     description: "Create your own Wordle-like word guessing game with vast customization options. Choose any word for players to guess, or add multiple words for added replayability or to make players guess them all at the same time! Set the maximum number of guesses players have. Define your own set of valid words for guessing. The possibilities are endless! Share it with your friends to give them a unique guessing challenge."
   },
+]
+
+export const planned: Game[] = [
   {
     name: "Sliding Puzzle",
     baseUrl: "/slide-puzzle",
@@ -25,8 +28,13 @@ export const comingSoon: Game[] = [
   },
   {
     name: "Trivia Categories",
-    baseUrl: "/category-trivia",
+    baseUrl: "/trivia-categories",
     description: "Create your own Jepoardy-like trivia game. Create your own categories, point scaling, bonuses and more! When your game is ready, share your screen and you're ready to host."
+  },
+  {
+    name: "Team Survey Showdown",
+    baseUrl: "/survey-showdown",
+    description: "Create your own Family Feud game"
   },
   {
     name: "Crossword",
