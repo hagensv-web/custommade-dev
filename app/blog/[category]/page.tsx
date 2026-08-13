@@ -2,6 +2,7 @@ import PostListing from "@/components/blogs/PostListing";
 import StyledLink from "@/components/core/StyledLink";
 import { getAllPosts, getAllPostsByCategory, getPostById, getPostCategories } from "@/logic/shared/blog-api";
 import { Metadata, ResolvingMetadata } from "next";
+import { useMemo } from "react";
 
 type Props = {
     params: Promise<{category: string}>
@@ -31,12 +32,18 @@ export default async function PostPage({ params }: Props) {
   const { category } = await params;
   const posts = await getAllPostsByCategory(category);
 
+  const formattedCategory = category
+      .split("-")
+      .map(s => s.substring(0,1).toUpperCase() + s.substring(1))
+      .join(" ")
+
   return (
     <div>
+      <h1>{formattedCategory} Blog</h1>
         { posts.map( post =>
             <PostListing key={post.id} post={post} />
         ) }
-        { !posts && <p>There are no posts in this category, check back later!</p> }
+        { posts.length == 0 && <p>There are no posts in this category, check back later!</p> }
     </div>
    
   );
