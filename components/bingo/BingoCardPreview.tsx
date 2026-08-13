@@ -4,6 +4,7 @@ import StyledInput from "../core/StyledInput";
 import { BingoCardManage } from "@/logic/bingo/bingo-card-manage";
 import { Dice1, Dices, Edit2, Play, Printer, Share2 } from "lucide-react";
 import { IBingoCardActions } from "@/logic/bingo/bingo-actions";
+import BingoCardDisplay from "./BingoCardDisplay";
 
 interface Props {
     card: BingoCardManage,
@@ -14,51 +15,15 @@ interface Props {
 export default function BingoCardPreview({ card, initialSeed, actions }: Props) {
 
     const [ seed, setSeed ] = useState(initialSeed ?? Math.floor(Math.random() * 10000))
+    
+    const cellStates = useMemo( () => {
+        const { rows, cols } = card.getData()
 
-    const cardData = useMemo( () => card.getData(), [ card ] )
-    const rows = useMemo( () => Array.from({ length: cardData.rows }, (_, i) => i), [ cardData ] )
-    const cols = useMemo( () => Array.from({ length: cardData.rows }, (_, i) => i), [ cardData ] )
+        const size = rows*cols;
 
-    const values = useMemo( () => {
+        return Array.from({ length: size }, _ => ({ highlighted: false }))
 
-        //Return empty list if card is missing
-        if (!card){
-            return Array.from({ length: 25 }, () => "" )
-        }
-
-        //Create seeded random number generator
-        const rng = new SeededRng(seed);
-
-        //Copy values
-        const pool = cardData.values.map(x => x)
-        const vals = []
-        for (let i = 0; i < cardData.rows*cardData.cols; i++){
-
-            //Insert free space
-            if (
-                cardData.hasFreeSpace &&
-                i % cardData.rows == Math.floor(cardData.cols / 2) &&
-                Math.floor(i / cardData.rows) == Math.floor(cardData.cols / 2)
-            ){
-                vals.push(cardData.freeSpaceText);
-                continue;
-            }
-
-            if (pool.length == 0){
-                vals.push("");
-                continue;
-            }
-
-            //Get value for cell
-            const nextIdx = rng.next(0, pool.length)
-            vals.push(...pool.splice(nextIdx,1))
-        }
-        return vals;
-    }, [card, seed] )
-
-    const getValue = (row: number, col: number): string => {
-        return values[row*cardData.cols + col]
-    }
+    }, [ card ])
 
     return (
         <div>
@@ -77,21 +42,11 @@ export default function BingoCardPreview({ card, initialSeed, actions }: Props) 
                 </button>
             </div>
 
-        <table className="hyphens-auto break-all text-xs lg:break-normal lg:text-sm border-collapse border-3 border-color-black w-full table-fixed max-w-150 m-auto">
-            <tbody>
-            { rows.map( r => (
-                <tr key={r}>
-                    { cols.map( c => (
-                        <td key={c} className="border-1">
-                            <div className="p-1 flex justify-center items-center w-full aspect-square">
-                            <p className="text-center">{getValue(r,c)}</p>
-                            </div>
-                        </td>
-                    ))}
-                </tr>
-            )) }
-            </tbody>
-        </table>
+        <BingoCardDisplay 
+            card={card.getData()}
+            seed={seed}
+            cellStates={cellStates}
+        />
         <div className="flex flex-row justify-around mt-10">
             { actions?.edit &&
                 <button 

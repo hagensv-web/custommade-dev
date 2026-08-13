@@ -2,6 +2,7 @@
 
 import { zlibCompress, zlibDecompress } from "../shared/compress";
 import { BingoCardData } from "@/data/bingo";
+import SeededRng from "../shared/seeded-rng";
 
 const BINGO_CARD_STORAGE = "/bingo/cards/";
 const BINGO_CARD_FORMAT = "/bingo/card-data-format";
@@ -16,6 +17,10 @@ const DEFAULT_HAS_FREE_SPACE = true;
 const DEFAULT_FREE_SPACE_TEXT = "Free";
 const DEFAULT_THEME = "default";
 
+//Card limits
+//Rows & Cols 3-7
+//Bingo cells 30-50 chars
+//100 values max
 const updateCardsList = (ids: string[]) => {
     localStorage.setItem(BINGO_CARD_STORAGE, JSON.stringify(ids))
 }
@@ -137,11 +142,67 @@ export class BingoCardManage {
         };
     }
 
+    generateCardValues(seed: number){
+        return BingoCardManage.generateCardValues(this.cardData,seed);
+    }
+
+    async getHash(): Promise<string> {
+        const length = 12;
+
+        const encoder = new TextEncoder();
+        const data = encoder.encode(JSON.stringify(this.cardData.values))
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = new Uint8Array(hashBuffer);
+        
+        // Convert to Base62
+        const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += chars[hashArray[i] % 62];
+        }
+        return result;
+    }
+
+    static generateCardValues(cardData: BingoCardData, seed: number): string[] {
+        const { rows, cols, hasFreeSpace, freeSpaceText } = cardData;
+
+        const rng = new SeededRng(seed);
+        
+        //Copy values
+        const pool = cardData.values.map(x => x)
+        const vals = []
+        for (let i = 0; i < rows*cols; i++){
+
+            //Insert free space
+            if (
+                hasFreeSpace &&
+                i % rows == Math.floor(cols / 2) &&
+                Math.floor(i / rows) == Math.floor(cols / 2)
+            ){
+                vals.push(freeSpaceText);
+                continue;
+            }
+
+            //If there is not enough values to fill the card fill the space with empty string
+            if (pool.length == 0){
+                vals.push("");
+                continue;
+            }
+
+            //Get value for cell
+            const nextIdx = rng.next(0, pool.length)
+            vals.push(...pool.splice(nextIdx,1))
+        }
+        return vals;
+    } 
+
     updateData(data: Partial<Omit<BingoCardData, "id" | "lastEdited">>) {
         this.cardData = {
             ...this.cardData,
             ...data
         }
+
+        this.cardData.lastEdited = Date.now();
 
         this.save()
     }
@@ -163,8 +224,6 @@ export class BingoCardManage {
 
             this.temporary = false
         }
-
-        this.cardData.lastEdited = Date.now();
         
         localStorage.setItem(
             getCardStoragePath(this.cardData.id),
