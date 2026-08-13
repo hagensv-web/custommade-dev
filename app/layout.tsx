@@ -38,7 +38,7 @@ export default function RootLayout({
 
       <div className="grid grid-cols-8">
 
-        <div className="col-span-1 hidden lg:flex justify-center items-center p-3">
+        <div className="col-span-1 hidden lg:flex justify-center p-3">
           <SidebarAd />
         </div>
           
@@ -46,7 +46,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        <div className="col-span-1 hidden lg:flex justify-center items-center p-3">
+        <div className="col-span-1 hidden lg:flex justify-center p-3">
           <SidebarAd />
         </div>
       </div>
