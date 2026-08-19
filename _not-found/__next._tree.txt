@@ -1,3 +1,3 @@
 :HL["/_next/static/chunks/0j9i5c_zklop-.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Schoolbell&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"8QMhyyKOnpSnR3uR1MH3s"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"Slp7tWSQJHiDK-r0NFle-"}
