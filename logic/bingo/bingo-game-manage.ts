@@ -37,9 +37,8 @@ export class BingoGameManage {
 
         if (!gameData.highlightedSpaces){
             gameData.highlightedSpaces = 0;
+            this.save();
         }
-
-        this.save();
     }
 
     static listBingoGameIds(): string[] {
