@@ -2,7 +2,7 @@
 
 import BingoCardPreview from "@/components/bingo/BingoCardPreview";
 import { BingoCardActions } from "@/logic/bingo/bingo-actions";
-import type { BingoCardManage } from "@/logic/bingo/bingo-card-manage";
+import { BingoCardManage } from "@/logic/bingo/bingo-card-manage";
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react";
 
@@ -14,27 +14,22 @@ export default function ShareBingoCardClientPage(){
     const [card, setCard] = useState<BingoCardManage>()
 
     useEffect( () => {
-        const loadClass = async () => {
-            const { BingoCardManage } = await import("@/logic/bingo/bingo-card-manage")
 
-            const shareData = searchParams.get("data")
+        const shareData = searchParams.get("data")
 
-            if (!shareData){
-                return;
-            }
-
-            const card = BingoCardManage.importBingoCard(shareData);
-
-            if (!card){
-                //Todo: Error message
-                return;
-            }
-
-            setCard(card);
-            setLoading(false)
+        if (!shareData){
+            return;
         }
 
-        loadClass();
+        const card = BingoCardManage.importBingoCard(shareData);
+
+        if (!card){
+            //Todo: Error message
+            return;
+        }
+
+        setCard(card);
+        setLoading(false)
         
     }, [])
 
