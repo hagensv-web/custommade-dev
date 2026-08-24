@@ -4,6 +4,7 @@ import Header from "@/components/core/Header";
 import Footer from "@/components/core/footer/Footer";
 import SidebarAd from "@/components/core/ad/SidebarAd";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { ModalProvider } from "@/context/modal-provider";
 
 export const metadata: Metadata = {
   title: {
@@ -45,7 +46,9 @@ export default function RootLayout({
         </div>
           
         <main className="lg:flex col-span-8 lg:col-span-6 pt-6 px-10 lg:px-2 w-full">
-          {children}
+          <ModalProvider>
+            {children}
+          </ModalProvider>
         </main>
 
         <div className="col-span-1 hidden lg:flex justify-center p-3">
