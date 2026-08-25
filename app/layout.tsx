@@ -5,6 +5,7 @@ import Footer from "@/components/core/footer/Footer";
 import SidebarAd from "@/components/core/ad/SidebarAd";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { ModalService } from "@/context/modal-service";
+import { PrintService } from "@/context/print-service";
 
 export const metadata: Metadata = {
   title: {
@@ -36,6 +37,7 @@ export default function RootLayout({
 
       <body className="min-h-screen bg-neutral-100 text-black dark:bg-mist-900 dark:text-neutral-200">
       
+      <PrintService>
         <div className="bg-violet-600/15">
         <Header />
         <div className="grid grid-cols-8">
@@ -55,6 +57,7 @@ export default function RootLayout({
         </div>
         <Footer />
         </div>
+      </PrintService>
 
       </body>
     </html>
