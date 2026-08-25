@@ -29,7 +29,7 @@ interface Modal {
     render: RenderModalContents
 }
 
-export function ModalProvider({ children }: ModalProviderProps) {
+export function ModalService({ children }: ModalProviderProps) {
 
     const [openModals, setOpenModals] = useState<Modal[]>([]);
 
@@ -63,7 +63,7 @@ export function ModalProvider({ children }: ModalProviderProps) {
     );
 }
 
-export function useModalProvider() {
+export function useModalService() {
     const context = useContext(ModalContext);
 
     if (!context) {

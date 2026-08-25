@@ -4,7 +4,7 @@ import Header from "@/components/core/Header";
 import Footer from "@/components/core/footer/Footer";
 import SidebarAd from "@/components/core/ad/SidebarAd";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { ModalProvider } from "@/context/modal-provider";
+import { ModalService } from "@/context/modal-service";
 
 export const metadata: Metadata = {
   title: {
@@ -34,31 +34,27 @@ export default function RootLayout({
 
       <GoogleAnalytics gaId="G-HFESTGRHQL" />
 
-      <body className="min-h-screen bg-neutral-100 text-black dark:bg-mist-900 dark:text-neutral-200 print:hidden">
-      <div className="bg-violet-600/15">
+      <body className="min-h-screen bg-neutral-100 text-black dark:bg-mist-900 dark:text-neutral-200">
+      
+        <div className="bg-violet-600/15">
+        <Header />
+        <div className="grid grid-cols-8">
+          <div className="col-span-1 hidden lg:flex justify-center p-3">
+            <SidebarAd />
+          </div>
+            
+          <main className="lg:flex col-span-8 lg:col-span-6 pt-6 px-10 lg:px-2 w-full">
+              <ModalService>
+                  {children}
+              </ModalService>
+          </main>
 
-      <Header />
-
-      <div className="grid grid-cols-8">
-
-        <div className="col-span-1 hidden lg:flex justify-center p-3">
-          <SidebarAd />
+          <div className="col-span-1 hidden lg:flex justify-center p-3">
+            <SidebarAd />
+          </div>
         </div>
-          
-        <main className="lg:flex col-span-8 lg:col-span-6 pt-6 px-10 lg:px-2 w-full">
-          <ModalProvider>
-            {children}
-          </ModalProvider>
-        </main>
-
-        <div className="col-span-1 hidden lg:flex justify-center p-3">
-          <SidebarAd />
+        <Footer />
         </div>
-      </div>
-
-      <Footer />
-
-      </div>
 
       </body>
     </html>
