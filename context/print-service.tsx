@@ -11,8 +11,7 @@ import {
 
 
 interface PrintContextValue {
-    setPrintMode: (contents: ReactElement) => void;
-    disablePrintMode: () => void;
+    print: (contents: ReactElement) => void;
 }
 
 const PrintContext = createContext<PrintContextValue | undefined>(undefined);
@@ -26,16 +25,20 @@ export function PrintService({ children }: PrintProviderProps) {
     const [ printContents, setPrintContents ] = useState<ReactElement | null>(null);
 
     useEffect( () => {
+        window.addEventListener('afterprint', disablePrintMode);
+        return () => window.removeEventListener('afterprint', disablePrintMode)
+    }, []);
+
+    useEffect( () => {
         if (!printContents){
             return;
         }
-        print();
-        //disablePrintMode();
+        window.print();
 
     }, [ printContents ])
 
 
-    const setPrintMode = (contents: ReactElement) => {
+    const print = (contents: ReactElement) => {
         setPrintContents(contents);
     }
 
@@ -46,8 +49,7 @@ export function PrintService({ children }: PrintProviderProps) {
     return (
         <PrintContext.Provider
             value={{
-                setPrintMode,
-                disablePrintMode,
+                print,
             }}
         >
             <div className={`${printContents ? 'print:hidden' : ''}`}>
