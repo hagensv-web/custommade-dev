@@ -5,23 +5,24 @@ body {
 }
 
 h1 {
-  font-weight: bolder;
-  font-size: 2.5em;
+  font-weight: 900;
+  font-size: 3em;
   margin: 1rem 0;
 }
 
 h2 {
-  font-size: 2em;
-  margin: 1rem 0;
+  font-size: 2.5em;
+  font-weight: 600;
+  margin: 0.75rem 0;
 }
 
 h3 {
-  font-size: 1.5em;
-  margin: 1rem 0;
+  font-size: 1.75em;
+  margin: 0.5rem 0;
 }
 
 p {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 
 ol {
