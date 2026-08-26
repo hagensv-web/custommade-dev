@@ -15,7 +15,6 @@ export default function Modal({ open, onClose, children }: ModalProps ){
     let modalClicked = false;
 
     const clickOutside = () => {
-        console.log(modalClicked)
         if (!modalClicked){
             onClose();
         }
